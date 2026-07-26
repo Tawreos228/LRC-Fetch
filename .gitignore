@@ -1,0 +1,27 @@
+# Сборка PyInstaller
+/build/
+/dist/
+*.spec
+*.manifest
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Тестовые артефакты
+/testmusic/
+/bigset/
+/filterset/
+/chipset/
+/rescanset/
+/upgradeset/
+/livefilter/
+
+# IDE / ОС
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
