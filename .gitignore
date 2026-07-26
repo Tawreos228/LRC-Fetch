@@ -4,6 +4,9 @@
 *.spec
 *.manifest
 
+# Выход установщика Inno Setup
+/installer_output/
+
 # Python
 __pycache__/
 *.pyc

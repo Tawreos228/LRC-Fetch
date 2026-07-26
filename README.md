@@ -41,9 +41,14 @@
 
 ## Установка
 
-Скачай готовый **`LRC Fetch.exe`** из раздела
-[**Releases**](../../releases) — портативный, установка не нужна: запустил
-и работаешь.
+Скачай из раздела [**Releases**](../../releases):
+
+- **`LRC Fetch Setup.exe`** — установщик: ярлыки в меню «Пуск» и на рабочем
+  столе, деинсталлятор, обновления. Ставится без прав администратора.
+- **`LRC Fetch.exe`** — портативная версия: один файл, установка не нужна,
+  запустил и работаешь.
+
+Windows 10/11.
 
 <details>
 <summary>Запуск из исходников</summary>
@@ -93,6 +98,18 @@ python -m PyInstaller --noconfirm --clean --onefile --windowed ^
 ```
 
 Результат — `dist/LRC Fetch.exe`.
+
+Установщик (нужен [Inno Setup 6](https://jrsoftware.org/isinfo.php)): собери
+onedir-версию и скомпилируй скрипт:
+
+```bash
+python -m PyInstaller --noconfirm --clean --onedir --windowed ^
+    --name "LRC Fetch" --icon lrcfetch.ico ^
+    --add-data "lrcfetch.ico;." --collect-submodules mutagen app.py
+ISCC installer.iss
+```
+
+Результат — `installer_output/LRC Fetch Setup 1.0.0.exe`.
 
 ## Разработка
 
